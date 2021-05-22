@@ -6,8 +6,8 @@ package graph
 import (
 	"context"
 
-	"github.com/99designs/gqlgen/example/federation/accounts/graph/generated"
-	"github.com/99designs/gqlgen/example/federation/accounts/graph/model"
+	"github.com/swiftcarrot/gqlgen/example/federation/accounts/graph/generated"
+	"github.com/swiftcarrot/gqlgen/example/federation/accounts/graph/model"
 )
 
 func (r *queryResolver) Me(ctx context.Context) (*model.User, error) {

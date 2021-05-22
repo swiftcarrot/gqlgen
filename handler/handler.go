@@ -5,13 +5,13 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/handler/extension"
-	"github.com/99designs/gqlgen/graphql/handler/lru"
-	"github.com/99designs/gqlgen/graphql/handler/transport"
-	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/gorilla/websocket"
+	"github.com/swiftcarrot/gqlgen/graphql"
+	"github.com/swiftcarrot/gqlgen/graphql/handler"
+	"github.com/swiftcarrot/gqlgen/graphql/handler/extension"
+	"github.com/swiftcarrot/gqlgen/graphql/handler/lru"
+	"github.com/swiftcarrot/gqlgen/graphql/handler/transport"
+	"github.com/swiftcarrot/gqlgen/graphql/playground"
 )
 
 // Deprecated: switch to graphql/handler.New

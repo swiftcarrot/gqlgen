@@ -6,8 +6,8 @@ package graph
 import (
 	"context"
 
-	"github.com/99designs/gqlgen/example/federation/reviews/graph/generated"
-	"github.com/99designs/gqlgen/example/federation/reviews/graph/model"
+	"github.com/swiftcarrot/gqlgen/example/federation/reviews/graph/generated"
+	"github.com/swiftcarrot/gqlgen/example/federation/reviews/graph/model"
 )
 
 func (r *productResolver) Reviews(ctx context.Context, obj *model.Product) ([]*model.Review, error) {

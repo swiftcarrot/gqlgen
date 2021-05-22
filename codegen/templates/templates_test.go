@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/99designs/gqlgen/internal/code"
 	"github.com/stretchr/testify/require"
+	"github.com/swiftcarrot/gqlgen/internal/code"
 )
 
 func TestToGo(t *testing.T) {

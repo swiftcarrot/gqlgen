@@ -5,12 +5,12 @@ import (
 	"path/filepath"
 	"syscall"
 
-	"github.com/99designs/gqlgen/internal/code"
+	"github.com/swiftcarrot/gqlgen/internal/code"
 
-	"github.com/99designs/gqlgen/codegen"
-	"github.com/99designs/gqlgen/codegen/config"
-	"github.com/99designs/gqlgen/codegen/templates"
-	"github.com/99designs/gqlgen/plugin"
+	"github.com/swiftcarrot/gqlgen/codegen"
+	"github.com/swiftcarrot/gqlgen/codegen/config"
+	"github.com/swiftcarrot/gqlgen/codegen/templates"
+	"github.com/swiftcarrot/gqlgen/plugin"
 )
 
 //go:embed *.gotpl

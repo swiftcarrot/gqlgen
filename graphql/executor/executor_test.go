@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/executor/testexecutor"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"github.com/swiftcarrot/gqlgen/graphql"
+	"github.com/swiftcarrot/gqlgen/graphql/executor/testexecutor"
 	"github.com/vektah/gqlparser/v2/ast"
 	"github.com/vektah/gqlparser/v2/gqlerror"
 	"github.com/vektah/gqlparser/v2/parser"

@@ -13,11 +13,11 @@ import (
 	"net/textproto"
 	"testing"
 
-	"github.com/99designs/gqlgen/example/fileupload/model"
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/stretchr/testify/require"
+	"github.com/swiftcarrot/gqlgen/example/fileupload/model"
+	"github.com/swiftcarrot/gqlgen/graphql"
+	"github.com/swiftcarrot/gqlgen/graphql/handler"
+	"github.com/swiftcarrot/gqlgen/graphql/handler/transport"
 )
 
 func TestFileUpload(t *testing.T) {

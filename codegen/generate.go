@@ -3,7 +3,7 @@ package codegen
 import (
 	"embed"
 
-	"github.com/99designs/gqlgen/codegen/templates"
+	"github.com/swiftcarrot/gqlgen/codegen/templates"
 )
 
 //go:embed *.gotpl

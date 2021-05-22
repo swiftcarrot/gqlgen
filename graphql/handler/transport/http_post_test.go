@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/99designs/gqlgen/graphql/handler/testserver"
-	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/stretchr/testify/assert"
+	"github.com/swiftcarrot/gqlgen/graphql/handler/testserver"
+	"github.com/swiftcarrot/gqlgen/graphql/handler/transport"
 )
 
 func TestPOST(t *testing.T) {

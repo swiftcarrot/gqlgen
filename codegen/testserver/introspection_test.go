@@ -4,12 +4,12 @@ import (
 	"context"
 	"testing"
 
-	"github.com/99designs/gqlgen/client"
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/handler/transport"
-	"github.com/99designs/gqlgen/graphql/introspection"
 	"github.com/stretchr/testify/require"
+	"github.com/swiftcarrot/gqlgen/client"
+	"github.com/swiftcarrot/gqlgen/graphql"
+	"github.com/swiftcarrot/gqlgen/graphql/handler"
+	"github.com/swiftcarrot/gqlgen/graphql/handler/transport"
+	"github.com/swiftcarrot/gqlgen/graphql/introspection"
 )
 
 func TestIntrospection(t *testing.T) {

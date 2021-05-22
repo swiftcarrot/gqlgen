@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/99designs/gqlgen/example/scalars"
-	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/swiftcarrot/gqlgen/example/scalars"
+	"github.com/swiftcarrot/gqlgen/graphql/handler"
+	"github.com/swiftcarrot/gqlgen/graphql/playground"
 )
 
 func main() {

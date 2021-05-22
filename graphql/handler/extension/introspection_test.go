@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/99designs/gqlgen/graphql"
 	"github.com/stretchr/testify/require"
+	"github.com/swiftcarrot/gqlgen/graphql"
 )
 
 func TestIntrospection(t *testing.T) {

@@ -3,10 +3,10 @@ package todo
 import (
 	"testing"
 
-	"github.com/99designs/gqlgen/client"
-	"github.com/99designs/gqlgen/graphql/handler"
-	"github.com/99designs/gqlgen/graphql/introspection"
 	"github.com/stretchr/testify/require"
+	"github.com/swiftcarrot/gqlgen/client"
+	"github.com/swiftcarrot/gqlgen/graphql/handler"
+	"github.com/swiftcarrot/gqlgen/graphql/introspection"
 )
 
 func TestTodo(t *testing.T) {

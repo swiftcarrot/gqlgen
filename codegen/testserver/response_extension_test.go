@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/99designs/gqlgen/client"
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/stretchr/testify/require"
+	"github.com/swiftcarrot/gqlgen/client"
+	"github.com/swiftcarrot/gqlgen/graphql"
+	"github.com/swiftcarrot/gqlgen/graphql/handler"
 )
 
 func TestResponseExtension(t *testing.T) {

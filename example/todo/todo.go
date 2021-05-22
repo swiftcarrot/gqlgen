@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/99designs/gqlgen/graphql"
 	"github.com/mitchellh/mapstructure"
+	"github.com/swiftcarrot/gqlgen/graphql"
 )
 
 var you = &User{ID: 1, Name: "You"}

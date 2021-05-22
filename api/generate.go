@@ -3,13 +3,13 @@ package api
 import (
 	"syscall"
 
-	"github.com/99designs/gqlgen/codegen"
-	"github.com/99designs/gqlgen/codegen/config"
-	"github.com/99designs/gqlgen/plugin"
-	"github.com/99designs/gqlgen/plugin/federation"
-	"github.com/99designs/gqlgen/plugin/modelgen"
-	"github.com/99designs/gqlgen/plugin/resolvergen"
 	"github.com/pkg/errors"
+	"github.com/swiftcarrot/gqlgen/codegen"
+	"github.com/swiftcarrot/gqlgen/codegen/config"
+	"github.com/swiftcarrot/gqlgen/plugin"
+	"github.com/swiftcarrot/gqlgen/plugin/federation"
+	"github.com/swiftcarrot/gqlgen/plugin/modelgen"
+	"github.com/swiftcarrot/gqlgen/plugin/resolvergen"
 )
 
 func Generate(cfg *config.Config, option ...Option) error {
