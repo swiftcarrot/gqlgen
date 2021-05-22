@@ -3,6 +3,7 @@
 set -euo pipefail
 
 go fmt ./...
+go mod tidy
 if [[ $(git --no-pager diff) ]] ; then
     echo "you need to run "go fmt" and commit the changes"
     git --no-pager diff
