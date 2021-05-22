@@ -1,6 +1,7 @@
 package stubgen
 
 import (
+	"embed"
 	"path/filepath"
 	"syscall"
 
