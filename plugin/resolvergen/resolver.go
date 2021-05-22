@@ -136,6 +136,7 @@ func (m *Plugin) generatePerSchema(data *codegen.Data) error {
 		}
 
 		err := templates.Render(templates.Options{
+			Embed:       &fs,
 			PackageName: data.Config.Resolver.Package,
 			FileNotice: `
 				// This file will be automatically regenerated based on the schema, any resolver implementations
