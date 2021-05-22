@@ -12,6 +12,9 @@ import (
 	"github.com/99designs/gqlgen/plugin"
 )
 
+//go:embed *.gotpl
+var fs embed.FS
+
 func New(filename string, typename string) plugin.Plugin {
 	return &Plugin{filename: filename, typeName: typename}
 }
@@ -41,6 +44,7 @@ func (m *Plugin) GenerateCode(data *codegen.Data) error {
 	pkgName := code.NameForDir(filepath.Dir(abs))
 
 	return templates.Render(templates.Options{
+		Embed:       &fs,
 		PackageName: pkgName,
 		Filename:    m.filename,
 		Data: &ResolverBuild{

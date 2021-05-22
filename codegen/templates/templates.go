@@ -2,6 +2,7 @@ package templates
 
 import (
 	"bytes"
+	"embed"
 	"fmt"
 	"go/types"
 	"io/ioutil"
@@ -16,7 +17,6 @@ import (
 	"unicode"
 
 	"github.com/99designs/gqlgen/internal/code"
-
 	"github.com/99designs/gqlgen/internal/imports"
 	"github.com/pkg/errors"
 )
@@ -27,6 +27,8 @@ var CurrentImports *Imports
 
 // Options specify various parameters to rendering a template.
 type Options struct {
+	Embed *embed.FS
+
 	// PackageName is a helper that specifies the package header declaration.
 	// In other words, when you write the template you don't need to specify `package X`
 	// at the top of the file. By providing PackageName in the Options, the Render
@@ -82,6 +84,26 @@ func Render(cfg Options) error {
 			return errors.Wrap(err, "error with provided template")
 		}
 		roots = append(roots, "template.gotpl")
+	} else if cfg.Embed != nil {
+		files, err := cfg.Embed.ReadDir(".")
+		if err != nil {
+			return err
+		}
+
+		for _, file := range files {
+			name := file.Name()
+			b, err := cfg.Embed.ReadFile(file.Name())
+			if err != nil {
+				return err
+			}
+
+			t, err = t.New(name).Parse(string(b))
+			if err != nil {
+				return errors.Wrap(err, cfg.Filename)
+			}
+
+			roots = append(roots, name)
+		}
 	} else {
 		// load all the templates in the directory
 		err := filepath.Walk(rootDir, func(path string, info os.FileInfo, err error) error {
@@ -89,6 +111,7 @@ func Render(cfg Options) error {
 				return err
 			}
 			name := filepath.ToSlash(strings.TrimPrefix(path, rootDir+string(os.PathSeparator)))
+
 			if !strings.HasSuffix(info.Name(), ".gotpl") {
 				return nil
 			}

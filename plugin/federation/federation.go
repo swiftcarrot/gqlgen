@@ -1,6 +1,7 @@
 package federation
 
 import (
+	"embed"
 	"fmt"
 	"sort"
 	"strings"
@@ -12,6 +13,9 @@ import (
 	"github.com/99designs/gqlgen/codegen/templates"
 	"github.com/99designs/gqlgen/plugin"
 )
+
+//go:embed *.gotpl
+var fs embed.FS
 
 type federation struct {
 	Entities []*Entity
@@ -207,6 +211,7 @@ func (f *federation) GenerateCode(data *codegen.Data) error {
 	}
 
 	return templates.Render(templates.Options{
+		Embed:           &fs,
 		PackageName:     data.Config.Federation.Package,
 		Filename:        data.Config.Federation.Filename,
 		Data:            f,

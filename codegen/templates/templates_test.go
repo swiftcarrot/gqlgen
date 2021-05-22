@@ -6,7 +6,6 @@ import (
 	"testing"
 
 	"github.com/99designs/gqlgen/internal/code"
-
 	"github.com/stretchr/testify/require"
 )
 
@@ -70,7 +69,6 @@ func TestToGoPrivate(t *testing.T) {
 }
 
 func Test_wordWalker(t *testing.T) {
-
 	helper := func(str string) []*wordInfo {
 		resultList := []*wordInfo{}
 		wordWalker(str, func(info *wordInfo) {

@@ -6,7 +6,6 @@ import (
 	"testing"
 
 	"github.com/99designs/gqlgen/internal/code"
-
 	"github.com/stretchr/testify/require"
 )
 
@@ -75,5 +74,4 @@ turtles "github.com/99designs/gqlgen/codegen/templates/testdata/pkg_mismatch"`,
 		require.Equal(t, `abar "github.com/99designs/gqlgen/codegen/templates/testdata/a/bar"
 bbar "github.com/99designs/gqlgen/codegen/templates/testdata/b/bar"`, a.String())
 	})
-
 }

@@ -1,6 +1,7 @@
 package resolvergen
 
 import (
+	"embed"
 	"os"
 	"path/filepath"
 	"strings"
@@ -12,6 +13,9 @@ import (
 	"github.com/99designs/gqlgen/plugin"
 	"github.com/pkg/errors"
 )
+
+//go:embed *.gotpl
+var fs embed.FS
 
 func New() plugin.Plugin {
 	return &Plugin{}
@@ -70,6 +74,7 @@ func (m *Plugin) generateSingleFile(data *codegen.Data) error {
 	}
 
 	return templates.Render(templates.Options{
+		Embed:       &fs,
 		PackageName: data.Config.Resolver.Package,
 		FileNotice:  `// THIS CODE IS A STARTING POINT ONLY. IT WILL NOT BE UPDATED WITH SCHEMA CHANGES.`,
 		Filename:    data.Config.Resolver.Filename,

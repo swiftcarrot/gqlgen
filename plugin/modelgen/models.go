@@ -1,6 +1,7 @@
 package modelgen
 
 import (
+	"embed"
 	"fmt"
 	"go/types"
 	"sort"
@@ -10,6 +11,9 @@ import (
 	"github.com/99designs/gqlgen/plugin"
 	"github.com/vektah/gqlparser/v2/ast"
 )
+
+//go:embed *.gotpl
+var fs embed.FS
 
 type BuildMutateHook = func(b *ModelBuild) *ModelBuild
 
@@ -215,6 +219,7 @@ func (m *Plugin) MutateConfig(cfg *config.Config) error {
 	}
 
 	return templates.Render(templates.Options{
+		Embed:           &fs,
 		PackageName:     cfg.Model.Package,
 		Filename:        cfg.Model.Filename,
 		Data:            b,
