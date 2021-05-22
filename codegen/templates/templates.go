@@ -66,10 +66,6 @@ func Render(cfg Options) error {
 	}
 	CurrentImports = &Imports{packages: cfg.Packages, destDir: filepath.Dir(cfg.Filename)}
 
-	// load path relative to calling source file
-	_, callerFile, _, _ := runtime.Caller(1)
-	rootDir := filepath.Dir(callerFile)
-
 	funcs := Funcs()
 	for n, f := range cfg.Funcs {
 		funcs[n] = f
@@ -105,33 +101,7 @@ func Render(cfg Options) error {
 			roots = append(roots, name)
 		}
 	} else {
-		// load all the templates in the directory
-		err := filepath.Walk(rootDir, func(path string, info os.FileInfo, err error) error {
-			if err != nil {
-				return err
-			}
-			name := filepath.ToSlash(strings.TrimPrefix(path, rootDir+string(os.PathSeparator)))
-
-			if !strings.HasSuffix(info.Name(), ".gotpl") {
-				return nil
-			}
-			b, err := ioutil.ReadFile(path)
-			if err != nil {
-				return err
-			}
-
-			t, err = t.New(name).Parse(string(b))
-			if err != nil {
-				return errors.Wrap(err, cfg.Filename)
-			}
-
-			roots = append(roots, name)
-
-			return nil
-		})
-		if err != nil {
-			return errors.Wrap(err, "locating templates")
-		}
+		return errors.New("locating templates")
 	}
 
 	// then execute all the important looking ones in order, adding them to the same file
